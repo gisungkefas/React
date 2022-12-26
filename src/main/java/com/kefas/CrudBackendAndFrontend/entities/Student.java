@@ -1,7 +1,5 @@
 package com.kefas.CrudBackendAndFrontend.entities;
 
-import com.kefas.CrudBackendAndFrontend.Enum.Gender;
-import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,7 +8,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.time.LocalDate;
 
 @Entity
 @Getter
@@ -23,15 +20,17 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String email;
+
     private String firstName;
 
     private String lastName;
 
     private String phoneNumber;
 
-    private LocalDate dob;
+    private String dob;
 
-    private Gender gender;
+    private String gender;
 
     private String address;
 }

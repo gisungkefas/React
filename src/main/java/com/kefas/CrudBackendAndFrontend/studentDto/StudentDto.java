@@ -1,16 +1,19 @@
 package com.kefas.CrudBackendAndFrontend.studentDto;
 
-import com.kefas.CrudBackendAndFrontend.Enum.Gender;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
-import java.time.LocalDate;
 
 @Getter
 @Setter
 @NoArgsConstructor
 public class StudentDto {
+
+    @Email
+    private String email;
 
     @NotNull(message = "Firstname most not be Empty")
     private String firstName;
@@ -22,10 +25,10 @@ public class StudentDto {
     private String phoneNumber;
 
     @NotNull(message = "DOB most not be Empty")
-    private LocalDate dob;
+    private String dob;
 
     @NotNull(message = "Gender most not be Empty")
-    private Gender gender;
+    private String gender;
 
     @NotNull(message = "Address most not be Empty")
     private String address;
